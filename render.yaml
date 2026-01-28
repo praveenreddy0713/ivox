@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: ivox-landing
+    env: static
+    buildCommand: ""
+    staticPublishPath: .

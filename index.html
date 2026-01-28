@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iVox Learning - Giving voice to Educators</title>
+    <meta name="description"
+        content="iVox Learning - Building careers through empowering educators with innovative AI-powered exam preparation platform">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+
+            --wnp-primary: #1f87b2;
+            --wnp-primary-hover: #166d91;
+            --wnp-secondary: #2b363d;
+            --wnp-text: #0f0f0f;
+            --wnp-text-light: #475569;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+
+            background: linear-gradient(180deg, #f0f8ff 0%, #ffffff 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: var(--wnp-text);
+        }
+
+
+        header {
+            width: 100%;
+            padding: 12px 0;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-main {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--wnp-secondary);
+        }
+
+        .logo-main img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-main:hover img {
+            transform: scale(1.05);
+        }
+
+        .logo-main span {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+
+        .follow-pill {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 24px;
+            border: 2px solid var(--wnp-primary);
+            border-radius: 50px;
+            color: var(--wnp-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .follow-pill:hover {
+            background: var(--wnp-primary);
+            color: #ffffff;
+            box-shadow: 0 8px 20px rgba(31, 135, 178, 0.25);
+            transform: translateY(-1px);
+            border-color: var(--wnp-primary);
+        }
+
+        .follow-pill i {
+            font-size: 16px;
+        }
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 40px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        article {
+            /* Animation Entrance */
+            animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        h1 {
+            font-size: 72px;
+            /* Increased for impact */
+            font-weight: 700;
+            color: var(--wnp-secondary);
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -1.5px;
+        }
+
+        .subtitle {
+            font-size: 36px;
+            font-weight: 300;
+            /* Lighter weight for contrast */
+            color: var(--wnp-primary);
+            line-height: 1.5;
+            margin-bottom: 40px;
+            letter-spacing: -0.5px;
+        }
+
+        .main-p {
+            font-size: 26px;
+            color: var(--wnp-secondary);
+            line-height: 1.6;
+            margin-bottom: 32px;
+            font-weight: 400;
+        }
+
+        .sub-p {
+            font-size: 22px;
+            color: var(--wnp-text-light);
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .sub-p a {
+            color: var(--wnp-primary);
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            transition: color 0.2s ease;
+        }
+
+        .sub-p a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--wnp-primary);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+            opacity: 0.5;
+        }
+
+        .sub-p a:hover {
+            color: var(--wnp-primary-hover);
+        }
+
+        .sub-p a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .bold-cert {
+            font-weight: 700;
+            color: var(--wnp-secondary);
+        }
+
+
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+                letter-spacing: -1px;
+            }
+
+            .subtitle {
+                font-size: 28px;
+                margin-bottom: 32px;
+            }
+
+            .container {
+                padding: 60px 24px;
+            }
+
+            .header-content {
+                padding: 0 24px;
+            }
+
+            .main-p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <!-- Header Left Aligned -->
+            <a href="https://ivox.ai/" class="logo-main">
+                <img src="https://ivox.ai/logo.png" alt="iVox Logo">
+                <span>iVox.ai</span>
+            </a>
+            <!-- Button Right Aligned -->
+            <a href="https://twitter.com/ivoxlearning" class="follow-pill" target="_blank">
+                <i class="fab fa-twitter"></i> Follow Us
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Content Hierarchy Restructured -->
+        <article>
+            <h1>iVox Learning</h1>
+            <h2 class="subtitle">Building careers through empowering educators</h2>
+
+            <p class="main-p">
+                ivox.ai is an innovative platform focused on enhancing exam preparation through Generative AI.
+            </p>
+
+            <p class="sub-p">
+                <a href="https://www.wannapractice.com/" target="_blank">WannaPractice</a> is an implementation of iVox
+                platform with focus on CyberSecurity certifications like
+                <span class="bold-cert">CISSP, CISM, CCSP, SSCP and CISA.</span>
+            </p>
+        </article>
+    </main>
+
+    <footer>
+        Copyrights © 2024 iVox Learning, Inc. All Rights Reserved.
+    </footer>
+</body>
+
+</html>
